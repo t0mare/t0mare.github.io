@@ -1,17 +1,57 @@
 <html>
   <head>
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-      html, body, pre, code, kbd, samp {
-        font-family: "font-family you want to use";
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+      code {
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h1>Test</h2>
+    <div style="padding: 50px; justify-content: center">
+      <div style="width: 90%; padding: 10px; color: orange; background: grey">
+        <p style="font-size: 40px">Oppgaver<i class="nes-mario"></i></p>
+      </div>
+      <div style="width: 90%; padding: 10px; color: black; background: orange">
+        <h2>Oppgave 1</h2>
+        <p>
+          <i>a)</i><br />
+          Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
+          <a
+            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+            >Se her</a
+          >
+        </p>
+        <p>
+          <i>b)</i><br />
+          Legg til ny public ssh-nøkkel til i Github.
+          <a
+            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+            >Se her</a
+          >
+        </p>
+        <p>
+          <i>c)</i><br />
+          Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
+          <code>apt install git</code>
+        </p>
+        <p><i>d)</i><br /></p>
+      </div>
+    </div>
   </body>
 </html>
