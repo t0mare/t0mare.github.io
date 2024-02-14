@@ -18,7 +18,8 @@
         font-family: "Press Start 2P";
       }
       code {
-        color: white;
+        color: green;
+        background-color: black;
       }
     </style>
   </head>
@@ -29,6 +30,7 @@
       </div>
       <div style="width: 90%; padding: 10px; color: black; background: orange">
         <h2>Oppgave 1</h2>
+        <p>Hent Github pages prosjektet ditt til Raspberry Pi.</p>
         <p>
           <i>a)</i><br />
           Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
@@ -39,9 +41,10 @@
         </p>
         <p>
           <i>b)</i><br />
-          Legg til ny public ssh-nøkkel til i Github.
+          Legg til ny public ssh-nøkkel til i Github some deploy key i ditt
+          pages prosjekt.
           <a
-            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+            href="https://dylancastillo.co/how-to-use-github-deploy-keys/#create-a-deploy-key-on-github"
             >Se her</a
           >
         </p>
@@ -50,7 +53,31 @@
           Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
           <code>apt install git</code>
         </p>
-        <p><i>d)</i><br /></p>
+        <p>
+          <i>d)</i><br />
+          På Raspberry Pi, slett default side i Nginx
+          <code>rm /var/www/html/*.html</code> (Sjekk først om den ligger der).
+          Hente side fra Github
+          <code>git clone git@github.com:example/example.github.io.git .</code>
+          Husk å stå i katalogen <code>/var/www/html</code>
+        </p>
+        <hr />
+        <h2>Oppgave 2</h2>
+        <p>
+          Lag et SSL fra <a href="https://letsencrypt.org/">Let's Encrypt</a>.
+          Legg til sertifikat til webserveren din, slik at du kan bruke HTTPS.
+        </p>
+        <p>
+          <i>a)</i><br />
+          Installer <a href="https://certbot.eff.org/">Certbot</a> og
+          Nginx-plugin på Raspberry Pi.
+          <code>apt install certbot python3-certbot-nginx</code>
+        </p>
+        <p>
+          <i>b)</i><br />
+          Lag et sertifikat ved hjelp av Certbot.
+          <code>certbot --nginx -d eksempel.kantega.no</code>
+        </p>
       </div>
     </div>
   </body>
