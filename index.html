@@ -90,7 +90,7 @@
           <i class="nes-logo"></i>Husk pause!!!
         </p>
         </div>
-        <div class="nes-balloon from-left" style="background-color: silver;">
+        <div class="nes-balloon from-left">
           <h2>Oppgave 3</h2>
           <p>
             Automatiser publisering av endringer på siden med
@@ -98,7 +98,7 @@
           </p>
           <p>
             <i>a)</i><br />
-            Legg public key du lagde tidligere inn i <code>./ssh/authorized_keys</code> på Raspberry.
+            Legg public key du lagde tidligere inn i <code>.ssh/authorized_keys</code> på Raspberry.
           </p>
           <p>
             <i>b)</i><br />
@@ -121,7 +121,7 @@
           <p>
             <i>c)</i><br />
             I ditt prosjekt opprett filen <code>.github/workflows/github-actions.yml</code> med innholdet:
-            <pre style="font-size: 10px">
+            <pre style="font-size: 10px;background-color: black;color: green;">
   name: remote ssh command
   on: [push]
   jobs:
@@ -144,7 +144,7 @@
           </p>
           <p>
             <i>d)</i><br />
-            Gjør en commit i koden, sjekk om den virker under Actions i prosjektet.
+            Gjør en endring i koden og push, sjekk om den virker under Actions i prosjektet.
           </p>
           <hr/>
           <p>
