@@ -92,6 +92,10 @@
           </p>
           <p>
             <i>a)</i><br />
+            Legg public key du lagde tidligere inn i <code>./ssh/authorized_keys</code> på Raspberry.
+          </p>
+          <p>
+            <i>b)</i><br />
             Vi vil at Github Actions skal kopiere koden vår til Raspberry når vi
             gjør en commit. Vi skal bruke et ferdiglaget prosjekt sammen med Github
             Actions. Se litt på eksemplene
@@ -109,7 +113,7 @@
             </div>
           </p>
           <p>
-            <i>b)</i><br />
+            <i>c)</i><br />
             I ditt prosjekt opprett filen <code>.github/workflows/github-actions.yml</code> med innholdet:
             <pre style="font-size: 10px">
   name: remote ssh command
@@ -133,7 +137,7 @@
             Merk den siste biten under <code>script:</code> i filen.
           </p>
           <p>
-            <i>c)</i><br />
+            <i>d)</i><br />
             Gjør en commit i koden, sjekk om den virker under Actions i prosjektet.
           </p>
         </div>
