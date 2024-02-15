@@ -30,46 +30,49 @@
         <p style="font-size: 40px"><i class="nes-icon coin is-large"></i></i>ppgaver</p>
       </div>
       <div style="width: 90%; padding: 10px; color: black; background: orange">
-        <div class="nes-balloon from-left" style="margin-left:60px">
-          <h2>Oppgave 1</h2>
-          <p>Hent Github pages prosjektet ditt til Raspberry Pi.</p>
-          <p>
-            <i>a)</i><br />
-            Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
-            <a
-              href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
-              >Se her</a
-            >
-          </p>
-          <p>
-            <i>b)</i><br />
-            Legg til ny public ssh-nøkkel til i Github som deploy key i ditt pages
-            prosjekt.
-            <a
-              href="https://dylancastillo.co/how-to-use-github-deploy-keys/#create-a-deploy-key-on-github"
-              >Se her</a
-            >
-          </p>
-          <p>
-            <i>c)</i><br />
-            Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
-            <code>apt install git</code>
-          </p>
-          <p>
-            <i>d)</i><br />
-            På Raspberry Pi, slett default side i Nginx
-            <code>rm /var/www/html/*.html</code> (Sjekk først om den ligger der).
-            Hente side fra Github
-            <code>git clone git@github.com:example/example.github.io.git .</code>
-            Husk å stå i katalogen <code>/var/www/html</code>
-          </p>
-          <hr />
-          <p>
-            <i class="snes-logo"></i>Husk pause!!!
-          </p>
+        <div style="margin-left: 60px;margin-right: 10px;">
+          <div class="nes-balloon from-left" style="width: 100%;">
+            <h2>Oppgave 1</h2>
+            <p>Hent Github pages prosjektet ditt til Raspberry Pi.</p>
+            <p>
+              <i>a)</i><br />
+              Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
+              <a
+                href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+                >Se her</a
+              >
+            </p>
+            <p>
+              <i>b)</i><br />
+              Legg til ny public ssh-nøkkel til i Github som deploy key i ditt pages
+              prosjekt.
+              <a
+                href="https://dylancastillo.co/how-to-use-github-deploy-keys/#create-a-deploy-key-on-github"
+                >Se her</a
+              >
+            </p>
+            <p>
+              <i>c)</i><br />
+              Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
+              <code>apt install git</code>
+            </p>
+            <p>
+              <i>d)</i><br />
+              På Raspberry Pi, slett default side i Nginx
+              <code>rm /var/www/html/*.html</code> (Sjekk først om den ligger der).
+              Hente side fra Github
+              <code>git clone git@github.com:example/example.github.io.git .</code>
+              Husk å stå i katalogen <code>/var/www/html</code>
+            </p>
+            <hr />
+            <p>
+              <i class="snes-logo"></i>Husk pause!!!
+            </p>
+          </div>
         </div>
         <i class="nes-mario"></i>
-        <div class="nes-balloon from-right" style="margin-right:60px">
+        <div style="margin-left: 10px;margin-right: 60px;">
+        <div class="nes-balloon from-right" style="width: 100%">
         <h2>Oppgave 2</h2>
         <p>
           Lag et SSL fra <a href="https://letsencrypt.org/">Let's Encrypt</a>.
@@ -91,10 +94,12 @@
           <i class="nes-logo"></i>Husk pause!!!
         </p>
         </div>
+        </div>
         <div style="float:right">
           <i class="nes-kirby"></i>
         </div>
-        <div class="nes-balloon from-left" style="margin-left:60px">
+        <div style="margin-left: 60px;margin-right: 10px;">
+        <div class="nes-balloon from-left" style="width: 100%;">
           <h2>Oppgave 3</h2>
           <p>
             Automatiser publisering av endringer på siden med
@@ -155,6 +160,7 @@
             <i class="nes-icon trophy is-large"></i>Godt jobba!!!<i class="nes-icon trophy is-large"></i><br/>
             Har du husket is?
           </p>
+        </div>
         </div>
         <i class="nes-ash"></i>
       </div>
