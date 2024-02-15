@@ -30,39 +30,42 @@
         <p style="font-size: 40px">Oppgaver<i class="nes-mario"></i></p>
       </div>
       <div style="width: 90%; padding: 10px; color: black; background: orange">
-        <h2>Oppgave 1</h2>
-        <p>Hent Github pages prosjektet ditt til Raspberry Pi.</p>
-        <p>
-          <i>a)</i><br />
-          Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
-          <a
-            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
-            >Se her</a
-          >
-        </p>
-        <p>
-          <i>b)</i><br />
-          Legg til ny public ssh-nøkkel til i Github some deploy key i ditt
-          pages prosjekt.
-          <a
-            href="https://dylancastillo.co/how-to-use-github-deploy-keys/#create-a-deploy-key-on-github"
-            >Se her</a
-          >
-        </p>
-        <p>
-          <i>c)</i><br />
-          Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
-          <code>apt install git</code>
-        </p>
-        <p>
-          <i>d)</i><br />
-          På Raspberry Pi, slett default side i Nginx
-          <code>rm /var/www/html/*.html</code> (Sjekk først om den ligger der).
-          Hente side fra Github
-          <code>git clone git@github.com:example/example.github.io.git .</code>
-          Husk å stå i katalogen <code>/var/www/html</code>
-        </p>
-        <hr />
+        <div class="nes-balloon from-left">
+          <h2>Oppgave 1</h2>
+          <p>Hent Github pages prosjektet ditt til Raspberry Pi.</p>
+          <p>
+            <i>a)</i><br />
+            Lag et nytt par med ssh-nøkler uten passord på Raspberry Pi.
+            <a
+              href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+              >Se her</a
+            >
+          </p>
+          <p>
+            <i>b)</i><br />
+            Legg til ny public ssh-nøkkel til i Github som deploy key i ditt pages
+            prosjekt.
+            <a
+              href="https://dylancastillo.co/how-to-use-github-deploy-keys/#create-a-deploy-key-on-github"
+              >Se her</a
+            >
+          </p>
+          <p>
+            <i>c)</i><br />
+            Sjekk om du har installert git på Raspberry Pi. Hvis ikke:
+            <code>apt install git</code>
+          </p>
+          <p>
+            <i>d)</i><br />
+            På Raspberry Pi, slett default side i Nginx
+            <code>rm /var/www/html/*.html</code> (Sjekk først om den ligger der).
+            Hente side fra Github
+            <code>git clone git@github.com:example/example.github.io.git .</code>
+            Husk å stå i katalogen <code>/var/www/html</code>
+          </p>
+          <hr />
+        </div>
+        <div class="nes-balloon from-right">
         <h2>Oppgave 2</h2>
         <p>
           Lag et SSL fra <a href="https://letsencrypt.org/">Let's Encrypt</a>.
@@ -80,8 +83,60 @@
           <code>certbot --nginx -d eksempel.kantega.no</code>
         </p>
         <hr />
-        <h2>Oppgave 3</h2>
-        <p>Automatiser publisering av endringer på siden med Github Actions.</p>
+        </div>
+        <div class="nes-balloon from-left">
+          <h2>Oppgave 3</h2>
+          <p>
+            Automatiser publisering av endringer på siden med
+            <a href="https://github.com/features/actions">Github Actions</a>>.
+          </p>
+          <p>
+            <i>a)</i><br />
+            Vi vil at Github Actions skal kopiere koden vår til Raspberry når vi
+            gjør en commit. Vi skal bruke et ferdiglaget prosjekt sammen med Github
+            Actions. Se litt på eksemplene
+            <a href="https://github.com/appleboy/ssh-action">her</a>. Før må vi
+            legge inn litt info i prosjektet om hvor prosjektet skal lastes opp. Gå
+            til Settings > Secrets and variables > Actions i ditt Github-prosjekt og
+            legg inn:
+            <div class="lists">
+              <ul class="nes-list is-disc">
+                <li>HOST=DNS navn på Raspberry</li>
+                <li>KEY=Privat nøkkel opprettet tidligere</li>
+                <li>PORT=SSH port (22)</li>
+                <li>USERNAME=Brukernavn (root)</li>
+              </ul>
+            </div>
+          </p>
+          <p>
+            <i>b)</i><br />
+            I ditt prosjekt opprett filen <code>.github/workflows/github-actions.yml</code> med innholdet:
+            <pre style="font-size: 10px">
+  name: remote ssh command
+  on: [push]
+  jobs:
+    build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+        - name: executing remote ssh commands using password
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}
+            port: ${{ secrets.PORT }}
+            script: |
+              cd /var/www/html
+              git pull              
+            </pre>
+            Merk den siste biten under <code>script:</code> i filen.
+          </p>
+          <p>
+            <i>c)</i><br />
+            Gjør en commit i koden, sjekk om den virker under Actions i prosjektet.
+          </p>
+        </div>
       </div>
     </div>
   </body>
